@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytical Chemistry - Complete Definitive Notes</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Fira+Code&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.8;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1a5f7a 0%, #159895 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInDown 1s;
+        }
+        
+        .header .subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+        
+        .header .emoji {
+            font-size: 2.5rem;
+            margin: 20px 0;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .toc {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .toc h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .toc ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        
+        .toc li {
+            padding: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s;
+        }
+        
+        .toc li:hover {
+            background: rgba(255,255,255,0.1);
+            padding-left: 20px;
+            border-radius: 5px;
+        }
+        
+        .toc a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .section {
+            margin: 60px 0;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            border-left: 5px solid #1a5f7a;
+            animation: fadeIn 0.8s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section-title {
+            font-size: 2.2rem;
+            color: #1a5f7a;
+            margin-bottom: 30px;
+            font-weight: 700;
+            border-bottom: 3px solid #159895;
+            padding-bottom: 10px;
+        }
+        
+        .subsection-title {
+            font-size: 1.5rem;
+            color: #159895;
+            margin: 25px 0 15px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .definition-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #1976d2;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .key-points {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #ff9800;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .key-points ul, .key-points ol {
+            margin-left: 20px;
+        }
+        
+        .key-points li {
+            margin: 10px 0;
+        }
+        
+        .example-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #4caf50;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .formula-box {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #9c27b0;
+            margin: 20px 0;
+            font-family: 'Fira Code', monospace;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .formula {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #7b1fa2;
+            padding: 15px;
+            background: white;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 5px 0;
+        }
+        
+        .warning-box {
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #f44336;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .tip-box {
+            background: linear-gradient(135deg, #fff9c4 0%, #fff59d 100%);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #fbc02d;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .step-container {
+            counter-reset: step;
+        }
+        
+        .step {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: relative;
+            padding-left: 100px;
+            transition: all 0.3s;
+        }
+        
+        .step:hover {
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            transform: translateX(5px);
+        }
+        
+        .step::before {
+            counter-increment: step;
+            content: "STEP " counter(step);
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            background: linear-gradient(135deg, #1a5f7a 0%, #159895 100%);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .step h3 {
+            color: #159895;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .step ul, .step ol {
+            margin-left: 20px;
+        }
+        
+        .step li {
+            margin: 8px 0;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+            padding: 3px 10px;
+            border-radius: 5px;
+            font-weight: 600;
+            display: inline-block;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 5px 15px;
+            background: #ff6b6b;
+            color: white;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-left: 10px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        th {
+            background: linear-gradient(135deg, #1a5f7a 0%, #159895 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        tr:hover {
+            background: #f5f5f5;
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .comparison-card {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .comparison-card.left {
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            border-left: 4px solid #f44336;
+        }
+        
+        .comparison-card.right {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-left: 4px solid #4caf50;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #1a5f7a 0%, #159895 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .toc ul {
+                grid-template-columns: 1fr;
+            }
+            
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .step {
+                padding-left: 20px;
+            }
+            
+            .step::before {
+                position: static;
+                display: block;
+                margin-bottom: 10px;
+            }
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+            }
+            
+            .back-to-top {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>ANALYTICAL CHEMISTRY</h1>
+            <div class="subtitle">Complete Definitive Study Notes</div>
+            <div class="emoji">📚 🧪 🔬 📊 ⚗️</div>
+            <p style="font-size: 1.1rem; margin-top: 20px;">All 14 Topics | Step-by-Step | Exam Ready</p>
+        </div>
+        
+        <div class="content">
+            <div class="toc" id="toc">
+                <h2>📋 TABLE OF CONTENTS</h2>
+                <ul>
+                    <li><a href="#calibration">1. Calibration</a></li>
+                    <li><a href="#standard-solution">2. Standard Solution</a></li>
+                    <li><a href="#prepare-solution">3. How to Prepare Standard Solution <span class="badge">NEW</span></a></li>
+                    <li><a href="#standardization">4. Standardization</a></li>
+                    <li><a href="#concentration">5. Concentration Calculations</a></li>
+                    <li><a href="#redox">6. Redox Titration</a></li>
+                    <li><a href="#hcl-std">7. Standardizing 0.1M HCl</a></li>
+                    <li><a href="#double-indicator">8. Double Indicator Titration</a></li>
+                    <li><a href="#back-titration">9. Back Titration</a></li>
+                    <li><a href="#complexometric">10. Complexometric Titration</a></li>
+                    <li><a href="#milliequivalent">11. Milliequivalent Calculations</a></li>
+                    <li><a href="#edta">12. EDTA (Full Meaning)</a></li>
+                    <li><a href="#accuracy">13. Accuracy vs Precision</a></li>
+                    <li><a href="#primary">14. Primary Standards</a></li>
+                </ul>
+            </div>
+
+            <!-- SECTION 1: CALIBRATION -->
+            <div id="calibration" class="section">
+                <h2 class="section-title">1. 📏 CALIBRATION</h2>
+                
+                <div class="definition-box">
+                    <h3 class="subsection-title">📖 DEFINITION</h3>
+                    <p><strong>Calibration</strong> is the process of establishing a relationship between measurements obtained from an instrument and known reference standards to ensure accuracy and reliability of results.</p>
+                </div>
+                
+                <div class="key-points">
+                    <h3 class="subsection-title">✨ KEY POINTS</h3>
+                    <ul>
+                        <li>Compares instrument readings to known standard values</li>
+                        <li>Corrects systematic errors in measurements</li>
+                        <li>Must be performed regularly to maintain accuracy</li>
+                        <li>Uses certified reference materials</li>
+                    </ul>
+                </div>
+                
+                <div class="key-points">
+                    <h3 class="subsection-title">🎯 PURPOSE</h3>
+                    <ul>
+                        <li>✓ Ensures instrument gives correct readings</li>
+                        <li>✓ Minimizes measurement errors</li>
+                        <li>✓ Establishes traceability to standards</li>
+                        <li>✓ Required for quality assurance</li>
+                    </ul>
+                </div>
+                
+                <div class="example-box">
+                    <h3 class="subsection-title">💡 EXAMPLES</h3>
+                    <ul>
+                        <li>→ Calibrating a pH meter with buffer solutions (pH 4, 7, 10)</li>
+                        <li>→ Calibrating analytical balance with standard weights</li>
+                        <li>→ Calibrating spectrophotometer with standard solutions</li>
+                        <li>→ Calibrating burette by measuring delivered volumes gravimetrically</li>
+                    </ul>
+                </div>
+                
+                <div class="tip-box">
+                    <h3 class="subsection-title">📊 CALIBRATION CURVE</h3>
+                    <p>• Graph plotting instrument response vs. known concentrations</p>
+                    <p>• Used to determine unknown concentrations from instrument readings</p>
+                    <p>• Should be linear (straight line) for most analyses</p>
+                    <p class="highlight">Equation: y = mx + c (Beer's Law for spectrophotometry)</p>
+                </div>
+            </div>
+
+            <!-- SECTION 2: STANDARD SOLUTION -->
+            <div id="standard-solution" class="section">
+                <h2 class="section-title">2. 🧪 STANDARD SOLUTION</h2>
+                
+                <div class="definition-box">
+                    <h3 class="subsection-title">📖 DEFINITION</h3>
+                    <p>A <strong>standard solution</strong> is a solution whose concentration is accurately known.</p>
+                </div>
+                
+                <h3 class="subsection-title">🔬 TYPES OF STANDARD SOLUTIONS</h3>
+                
+                <div class="comparison-grid">
+                    <div class="comparison-card right">
+                        <h4 style="color: #2e7d32; margin-bottom: 15px;">✅ PRIMARY STANDARD SOLUTION</h4>
+                        <ul style="margin-left: 20px;">
+                            <li>Made by dissolving exact amount of primary standard substance</li>
+                            <li>Concentration calculated directly from mass and volume</li>
+                            <li>No need for standardization</li>
+                            <li><strong>Example:</strong> Dissolving 5.305g Na₂CO₃ in 1L water → 0.05M solution</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="comparison-card left">
+                        <h4 style="color: #c62828; margin-bottom: 15px;">⚠️ SECONDARY STANDARD SOLUTION</h4>
+                        <ul style="margin-left: 20px;">
+                            <li>Prepared approximately, then standardized</li>
+                            <li>Concentration determined by titration against primary standard</li>
+                            <li>Used when primary standard not available</li>
+                            <li><strong>Examples:</strong> HCl, NaOH, KMnO₄ solutions</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="formula-box">
+                    <h3 class="subsection-title">🧮 CONCENTRATION FORMULA</h3>
+                    <div class="formula">Concentration (M) = (mass of solute / molar mass) / volume in liters</div>
+                </div>
+                
+                <div class="key-points">
+                    <h3 class="subsection-title">🏪 STORAGE</h3>
+                    <ul>
+                        <li>Use clean, dry bottles</li>
+                        <li>Label clearly with concentration and date</li>
+                        <li>Store in cool, dark place (for light-sensitive solutions)</li>
+                        <li>Some solutions have limited shelf life</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- SECTION 3: HOW TO PREPARE STANDARD SOLUTION -->
+            <div id="prepare-solution" class="section">
+                <h2 class="section-title">3. ⚗️ HOW TO PREPARE A STANDARD SOLUTION <span class="badge">⭐ NEW!</span></h2>
+                
+                <p style="text-align: center; font-size: 1.2rem; color: #57c5b6; margin: 20px 0; font-style: italic;">
+                    Complete step-by-step procedure for preparing standard solutions!
+                </p>
+                
+                <div class="key-points">
+                    <h3 class="subsection-title">🛠️ EQUIPMENT NEEDED</h3>
+                    <ul>
+                        <li>✓ Analytical balance (4 decimal places)</li>
+                        <li>✓ Volumetric flask (appropriate size)</li>
+                        <li>✓ Beaker (for dissolving)</li>
+                        <li>✓ Glass rod (for stirring)</li>
+                        <li>✓ Wash bottle with distilled water</li>
+                        <li>✓ Funnel (for transfer)</li>
+                        <li>✓ Weighing bottle or watch glass</li>
+                        <li>✓ Primary standard substance</li>
+                    </ul>
+                </div>
+                
+                <div class="step-container">
+                    <div class="step">
+                        <h3>CALCULATE MASS REQUIRED</h3>
+                        <div class="formula-box">
+                            <div class="formula">Mass (g) = Molarity (M) × Volume (L) × Molar Mass (g/mol)</div>
+                        </div>
+                        <div class="example-box" style="margin-top: 15px;">
+                            <p><strong>Example:</strong> Prepare 250 mL of 0.1 M Na₂CO₃ solution</p>
+                            <p>Given: M = 0.1 M, V = 0.25 L, MM of Na₂CO₃ = 106 g/mol</p>
+                            <p style="margin-top: 10px;">Mass = 0.1 × 0.25 × 106</p>
+                            <p class="highlight">Mass = 2.65 g</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <h3>⚖️ WEIGH THE SUBSTANCE</h3>
+                        <ol>
+                            <li>Switch on analytical balance and let it stabilize</li>
+                            <li>Tare the weighing bottle (set to zero)</li>
+                            <li>Using a spatula, add primary standard to weighing bottle</li>
+                            <li>Weigh accurately (to 4 decimal places)</li>
+                            <li>Record the exact mass (e.g., 2.6523 g)</li>
+                        </ol>
+                        <div class="warning-box" style="margin-top: 15px;">
+                            <strong>⚠️ Important:</strong> Don't try to weigh exactly 2.65g! Weigh close to it and record the exact value you get.
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <h3>💧 DISSOLVE IN SMALL AMOUNT OF SOLVENT</h3>
+                        <ol>
+                            <li>Transfer the weighed substance to a clean beaker</li>
+                            <li>Add about 50-100 mL of distilled water (or appropriate solvent)</li>
+                            <li>Stir with glass rod until completely dissolved</li>
+                            <li>For difficult-to-dissolve substances, you may:
+                                <ul style="margin-top: 10px;">
+                                    <li>→ Heat gently (if substance is heat-stable)</li>
+                                    <li>→ Add acid/base if needed (e.g., CaCO₃ dissolves in HCl)</li>
+                                    <li>→ Stir for longer period</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                    
+                    <div class="step">
+                        <h3>🔄 TRANSFER TO VOLUMETRIC FLASK</h3>
+                        <ol>
+                            <li>Place funnel in neck of volumetric flask (e.g., 250 mL)</li>
+                            <li>Pour the solution from beaker into flask through funnel</li>
+                            <li>Rinse beaker with small portions of distilled water</li>
+                            <li>Transfer all rinsings to the volumetric flask</li>
+                            <li>Rinse the glass rod and funnel into the flask</li>
+                            <li><strong>Make sure NO solution is lost during transfer!</strong></li>
+                        </ol>
+                    </div>
+                    
+                    <div class="step">
+                        <h3>📏 DILUTE TO MARK</h3>
+                        <ol>
+                            <li>Remove funnel from volumetric flask</li>
+                            <li>Add distilled water gradually until nearly at the mark</li>
+                            <li>When solution is about 1 cm below mark:
+                                <ul style="margin-top: 10px;">
+                                    <li>→ Use dropper/pipette for final additions</li>
+                                    <li>→ Add water dropwise</li>
+                                </ul>
+                            </li>
+                            <li>Adjust meniscus to touch the calibration mark at eye level</li>
+                            <li>The meniscus bottom should just touch the line</li>
+                        </ol>
+                        <div class="tip-box" style="margin-top: 15px;">
+                            <strong>💡 Tip:</strong> View the meniscus at eye level to avoid parallax error!
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <h3>🔀 MIX THOROUGHLY</h3>
+                        <ol>
+                            <li>Stopper the volumetric flask tightly</li>
+                            <li>Invert the flask at least 20-30 times</li>
+                            <li>Ensure complete mixing by swirling</li>
+                            <li>Check that no air bubbles remain</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="step">
+                        <h3>🧮 CALCULATE ACTUAL CONCENTRATION</h3>
+                        <p>Since you weighed the exact mass (not exactly what you calculated), calculate the actual concentration:</p>
+                        <div class="formula-box" style="margin: 15px 0;">
+                            <div class="formula">Actual Molarity = (Actual Mass / Molar Mass) / Volume in Liters</div>
+                        </div>
+                        <div class="example-box">
+                            <p><strong>Example:</strong> You actually weighed 2.6523 g (not exactly 2.65 g)</p>
+                            <p style="margin-top: 10px;">Actual M = (2.6523 / 106) / 0.25 = 0.1001 M</p>
+                            <p class="highlight" style="margin-top: 10px;">✓ Your solution is 0.1001 M (not exactly 0.1 M)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <h3>🏷️ LABEL AND STORE</h3>
+                        <ol>
+                            <li>Transfer solution to clean, dry storage bottle</li>
+                            <li>Label clearly with:
+                                <ul style="margin-top: 10px;">
+                                    <li>→ Name of substance</li>
+                                    <li>→ Actual concentration</li>
+                                    <li>→ Date of preparation</li>
+                                    <li>→ Your name/initials</li>
+                                </ul>
+                            </li>
+                            <li>Store appropriately:
+                                <ul style="margin-top: 10px;">
+                                    <li>→ Cool, dark place for light-sensitive solutions</li>
+                                    <li>→ Tightly sealed to prevent evaporation</li>
+                                    <li>→ Away from incompatible chemicals</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="warning-box" style="margin-top: 40px;">
+                    <h3 style="color: #d32f2f; text-align: center; margin-bottom: 20px; font-size: 1.5rem;">⚠️ IMPORTANT PRECAUTIONS</h3>
+                    <div class="comparison-grid">
+                        <div>
+                            <h4 style="color: #d32f2f; margin-bottom: 15px;">❌ DO NOT:</h4>
+                            <ul style="margin-left: 20px;">
+                                <li>Add water to flask first then add solute</li>
+                                <li>Try to weigh exactly the calculated mass</li>
+                                <li>Overshoot the calibration mark</li>
+                                <li>Use tap water (use distilled/deionized water)</li>
+                                <li>Use dirty or wet glassware</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: #388e3c; margin-bottom: 15px;">✅ DO:</h4>
+                            <ul style="margin-left: 20px;">
+                                <li>Use analytical balance for accurate weighing</li>
+                                <li>Record the exact mass weighed</li>
+                                <li>Rinse all glassware thoroughly</li>
+                                <li>Check meniscus at eye level</li>
+                                <li>Mix solution thoroughly after dilution</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="example-box" style="margin-top: 40px; padding: 30px;">
+                    <h3 style="text-align: center; color: #2e7d32; margin-bottom: 25px; font-size: 1.6rem;">📝 COMPLETE WORKED EXAMPLE</h3>
+                    <p style="font-size: 1.1rem;"><strong>Problem:</strong> Prepare 500 mL of 0.05 M sodium carbonate (Na₂CO₃) solution</p>
+                    
+                    <h4 style="margin-top: 25px; color: #1a5f7a;">SOLUTION:</h4>
+                    
+                    <div style="margin: 20px 0; padding: 15px; background: white; border-radius: 8px;">
+                        <p><strong>Step 1: Calculate mass</strong></p>
+                        <p>Given: M = 0.05 M, V = 0.5 L, MM of Na₂CO₃ = 106 g/mol</p>
+                        <p>Mass = M × V × MM = 0.05 × 0.5 × 106</p>
+                        <p class="highlight">Mass = 2.65 g</p>
+                    </div>
+                    
+                    <div style="margin: 20px 0; padding: 15px; background: white; border-radius: 8px;">
+                        <p><strong>Step 2: Weigh</strong></p>
+                        <p>Actual mass weighed = <span class="highlight">2.6487 g</span> (recorded from balance)</p>
+                    </div>
+                    
+                    <div style="margin: 20px 0; padding: 15px; background: white; border-radius: 8px;">
+                        <p><strong>Steps 3-6: Dissolve, transfer, dilute, mix</strong></p>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Dissolved 2.6487 g in ~100 mL water in beaker</li>
+                            <li>Transferred quantitatively to 500 mL volumetric flask</li>
+                            <li>Diluted to mark with distilled water</li>
+                            <li>Mixed thoroughly by inverting 30 times</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="margin: 20px 0; padding: 15px; background: white; border-radius: 8px;">
+                        <p><strong>Step 7: Calculate actual concentration</strong></p>
+                        <p>Actual M = (2.6487 / 106) / 0.5</p>
+                        <p>Actual M = 0.02499 / 0.5</p>
+                        <p class="highlight">Actual M = 0.04998 M ≈ 0.0500 M</p>
+                    </div>
+                    
+                    <div style="margin: 20px 0; padding: 15px; background: white; border-radius: 8px;">
+                        <p><strong>Step 8: Label</strong></p>
+                        <p>Label: <strong style="color: #1a5f7a;">0.0500 M Na₂CO₃, prepared [date], [your name]</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 4: STANDARDIZATION -->
+            <div id="standardization" class="section">
+                <h2 class="section-title">4. 🎯 STANDARDIZATION</h2>
+                
+                <div class="definition-box">
+                    <h3 class="subsection-title">📖 DEFINITION</h3>
+                    <p><strong>Standardization</strong> is the process of determining the exact concentration of a solution by titrating it against a primary standard or another solution of accurately known concentration.</p>
+                </div>
+                
+                <div class="key-points">
+                    <h3 class="subsection-title">❓ WHY NEEDED?</h3>
+                    <ul>
+                        <li>Some reagents cannot be obtained in pure form (e.g., HCl, NaOH)</li>
+                        <li>Some solutions change concentration over time</li>
+                        <li>To verify concentration of prepared solutions</li>
+                        <li>Required for accurate quantitative analysis</li>
+                    </ul>
+                </div>
+                
+                <div class="step-container">
+                    <div class="step">
+                        <h3>THE PROCESS</h3>
+                        <ol>
+                            <li>Prepare solution of approximate concentration</li>
+                            <li>Weigh accurately a primary standard</li>
+                            <li>Dissolve primary standard in solvent</li>
+                            <li>Titrate solution against primary standard</li>
+                            <li>Calculate exact concentration from titration data</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="example-box">
+                    <h3 class="subsection-title">📊 EXAMPLE - Standardizing NaOH</h3>
+                    <ol>
+                        <li>Prepare ~0.1M NaOH solution</li>
+                        <li>Accurately weigh 0.5-0.7g potassium hydrogen phthalate (KHP)</li>
+                        <li>Dissolve in water</li>
+                        <li>Add phenolphthalein indicator</li>
+                        <li>Titrate with NaOH until pink endpoint</li>
+                    </ol>
+                    <div class="formula-box" style="margin-top: 15px;">
+                        <div class="formula">M<sub>NaOH</sub> = (mass<sub>KHP</sub> / MM<sub>KHP</sub>) / (Volume<sub>NaOH</sub> in L)</div>
+                    </div>
+                </div>
+                
+                <div class="tip-box">
+                    <h3 class="subsection-title">📅 FREQUENCY</h3>
+                    <ul>
+                        <li>Fresh solutions: immediately after preparation</li>
+                        <li>Stored solutions: weekly or before critical analyses</li>
+                        <li>After long storage periods</li>
+                        <li>When accuracy is questioned</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- SECTION 5: CONCENTRATION CALCULATIONS -->
+            <div id="concentration" class="section">
+                <h2 class="section-title">5. 🧮 CONCENTRATION CALCULATIONS</h2>
+                <p style="font-size: 1.1rem; margin-bottom: 20px;"><em>Finding Concentration from Specific Gravity, % Purity, and Molar Mass</em></p>
+                
+                <div class="formula-box">
+                    <h3 class="subsection-title">📐 MAIN FORMULA</h3>
+                    <div class="formula">Molarity (M) = (Specific Gravity × % Purity × 10) / Molar Mass</div>
+                    <p style="margin-top: 15px; text-align: left;">OR</p>
+                    <div class="formula">Molarity (M) = (ρ × % Purity × 1000) / Molar Mass</div>
+                </div>
+                
+                <div class="key-points">
+                    <h3 class="subsection-title">📝 WHERE:</h3>
+                    <ul>
+                        <li>ρ (rho) = density = Specific Gravity × 1 g/mL</li>
+                        <li>% Purity = percentage as decimal (e.g., 98% = 0.98)</li>
+                        <li>Molar Mass = in g/mol</li>
+                        <li>1000 = converts g/mL to g/L</li>
+                    </ul>
+                </div>
+                
+                <div class="step-container">
+                    <div class="step">
+                        <h3>Find density</h3>
+                        <div class="formula">Density = Specific Gravity × 1 g/mL</div>
+                    </div>
+                    <div class="step">
+                        <h3>Find mass of pure solute per mL</h3>
+                        <div class="formula">Mass of pure solute = Density × (% Purity/100)</div>
+                    </div>
+                    <div class="step">
+                        <h3>Find mass per liter</h3>
+                        <div class="formula">Mass per liter = Mass per mL × 1000</div>
+                    </div>
+                    <div class="step">
+                        <h3>Find Molarity</h3>
+                        <div class="formula">Molarity = Mass per liter / Molar Mass</div>
+                    </div>
+                </div>
+                
+                <div class="example-box">
+                    <h3 style="text-align: center; color: #2e7d32; margin-bottom: 20px;">📝 WORKED EXAMPLE</h3>
+                    <p><strong>Given:</strong> Concentrated HCl with SG = 1.18, Purity = 37%, MM = 36.5 g/mol</p>
+                    <p><strong>Find:</strong> Molarity</p>
+                    <p style="margin-top: 15px;"><strong>Solution:</strong></p>
+                    <p>M = (1.18 × 37 × 10) / 36.5</p>
+                    <p>M = 436.6 / 36.5</p>
+                    <p class="highlight">M = 11.96 M ≈ 12 M</p>
+                    <p style="margin-top: 10px;"><strong>Therefore, concentrated HCl is approximately 12 M</strong></p>
+                </div>
+                
+                <div class="key-points">
+                    <h3 class="subsection-title">📚 OTHER COMMON EXAMPLES</h3>
+                    <table>
+                        <tr>
+                            <th>Acid/Base</th>
+                            <th>SG</th>
+                            <th>% Purity</th>
+                            <th>MM</th>
+                            <th>Molarity</th>
+                        </tr>
+                        <tr>
+                            <td>Conc. H₂SO₄</td>
+                            <td>1.84</td>
+                            <td>98%</td>
+                            <td>98</td>
+                            <td>18.4 M</td>
+                        </tr>
+                        <tr>
+                            <td>Conc. HNO₃</td>
+                            <td>1.42</td>
+                            <td>70%</td>
+                            <td>63</td>
+                            <td>15.8 M</td>
+                        </tr>
+                        <tr>
+                            <td>Conc. NH₃</td>
+                            <td>0.90</td>
+                            <td>25%</td>
+                            <td>17</td>
+                            <td>13.2 M</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="tip-box">
+                    <h3 class="subsection-title">💧 DILUTION CALCULATION</h3>
+                    <p>To prepare dilute solution from concentrated:</p>
+                    <div class="formula-box">
+                        <div class="formula">M₁V₁ = M₂V₂</div>
+                    </div>
+                    <div class="example-box" style="margin-top: 15px;">
+                        <p><strong>Example:</strong> Prepare 1L of 0.1M HCl from 12M HCl</p>
+                        <p>V₁ = (0.1 × 1000) / 12 = 8.33 mL</p>
+                        <p class="highlight">Take 8.33 mL conc. HCl and dilute to 1L</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 6: REDOX TITRATION -->
+            <div id="redox" class="section">
+                <h2 class="section-title">6. 🔴🟦 REDOX TITRATION</h2>
+                
+                <div class="definition-box">
+                    <h3 class="subsection-title">📖 DEFINITION</h3>
+                    <p><strong>Redox titration</strong> is based on oxidation-reduction reactions between the analyte and titrant.</p>
+                </div>
+                
+                <div class="key-points">
+                    <h3 class="subsection-title">⚡ PRINCIPLE</h3>
+                    <ul>
+                        <li>Transfer of electrons between oxidizing and reducing agents</li>
+                        <li><strong>Oxidation:</strong> loss of electrons (increase in oxidation number)</li>
+                        <li><strong>Reduction:</strong> gain of electrons (decrease in oxidation number)</li>
+                        <li><strong>Equivalence point:</strong> moles of electrons lost = moles gained</li>
+                    </ul>
+                </div>
+                
+                <div class="comparison-grid">
+                    <div class="comparison-card right">
+                        <h4 style="color: #6a1b9a;">A) PERMANGANOMETRY</h4>
+                        <ul style="margin-left: 20px;">
+                            <li><strong>Titrant:</strong> KMnO₄ (potassium permanganate)</li>
+                            <li><strong>Self-indicating</strong> (purple color)</li>
+                            <li><strong>Medium:</strong> acidic (H₂SO₄)</li>
+                            <li><strong>Endpoint:</strong> faint pink color</li>
+                            <li><strong>Half-reaction:</strong> MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="comparison-card right">
+                        <h4 style="color: #e65100;">B) DICHROMATE METHOD</h4>
+                        <ul style="margin-left: 20px;">
+                            <li><strong>Titrant:</strong> K₂Cr₂O₇ (potassium dichromate)</li>
+                            <li><strong>Indicator:</strong> diphenylamine or ferroin</li>
+                            <li><strong>Medium:</strong> acidic (H₂SO₄)</li>
+                            <li><strong>Half-reaction:</strong> Cr₂O₇²⁻ + 14H⁺ + 6e⁻ → 2Cr³⁺ + 7H₂O</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="comparison-grid" style="margin-top: 20px;">
+                    <div class="comparison-card right">
+                        <h4 style="color: #283593;">C) IODOMETRY (Indirect)</h4>
+                        <ul style="margin-left: 20px;">
+                            <li>Excess I⁻ added to oxidizing agent</li>
+                            <li>I₂ liberated is titrated with Na₂S₂O₃</li>
+                            <li><strong>Indicator:</strong> starch (blue complex with I₂)</li>
+                            <li><strong>Used for:</strong> Cu²⁺, Cl₂, H₂O₂ determination</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="comparison-card right">
+                        <h4 style="color: #1565c0;">D) IODIMETRY (Direct)</h4>
+                        <ul style="margin-left: 20px;">
+                            <li>Direct titration with I₂ solution</li>
+                            <li>Used for reducing agents</li>
+                            <li><strong>Indicator:</strong> starch</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="formula-box">
+                    <h3 class="subsection-title">🧮 CALCULATIONS</h3>
+                    <div class="formula">n₁M₁V₁ = n₂M₂V₂</div>
+                    <p style="margin-top: 10px; text-align: left;"><strong>Where n = number of electrons transferred</strong></p>
+                </div>
+                
+                <div class="example-box">
+                    <h3 class="subsection-title">📊 EXAMPLE</h3>
+                    <p><strong>Reaction:</strong> KMnO₄ + Fe²⁺ in acid medium</p>
+                    <p>MnO₄⁻ + 5Fe²⁺ + 8H⁺ → Mn²⁺ + 5Fe³⁺ + 4H₂O</p>
+                    <p style="margin-top: 15px;">n(MnO₄⁻) = 5, n(Fe²⁺) = 1</p>
+                    <p style="margin-top: 10px;">If 25mL of 0.02M KMnO₄ oxidizes Fe²⁺:</p>
+                    <p class="highlight">Moles Fe²⁺ = 5 × 0.02 × 0.025 = 0.0025 mol</p>
+                </div>
+                
+                <div class="key-points">
+                    <h3 class="subsection-title">🎯 COMMON APPLICATIONS</h3>
+                    <ul>
+                        <li>Determination of Fe²⁺ in iron tablets</li>
+                        <li>Assay of H₂O₂ in disinfectants</li>
+                        <li>Determination of oxalate in kidney stones</li>
+                        <li>Water hardness (sometimes)</li>
+                        <li>Vitamin C determination</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- SECTION 7-14 CONTINUE... -->
+            <div id="hcl-std" class="section">
+                <h2 class="section-title">7. 🧪 STANDARDIZATION OF 0.1M HCl</h2>
+                
+                <div class="key-points">
+                    <h3 class="subsection-title">⚗️ PRINCIPLE</h3>
+                    <p>HCl is standardized against anhydrous sodium carbonate (Na₂CO₃), a primary standard base.</p>
+                    <div class="formula-box" style="margin: 15px 0;">
+                        <div class="formula">2HCl + Na₂CO₃ → 2NaCl + H₂O + CO₂</div>
+                    </div>
+                </div>
+                
+                <div class="key-points">
+                    <h3 class="subsection-title">🛠️ MATERIALS NEEDED</h3>
+                    <ul>
+                        <li>Approximately 0.1M HCl solution</li>
+                        <li>Anhydrous sodium carbonate (Na₂CO₃) - primary standard</li>
+                        <li>Methyl orange or bromocresol green indicator</li>
+                        <li>Burette, pipette, conical flask</li>
+                        <li>Analytical balance</li>
+                    </ul>
+                </div>
+                
+                <div class="step-container">
+                    <div class="step">
+                        <h3>PREPARE HCl SOLUTION</h3>
+                        <p>Dilute concentrated HCl to approximately 0.1M using M₁V₁ = M₂V₂</p>
+                    </div>
+                    <div class="step">
+                        <h3>⚖️ WEIGH PRIMARY STANDARD</h3>
+                        <ul>
+                            <li>Accurately weigh 0.13-0.15g Na₂CO₃</li>
+                            <li>Use analytical balance (4 decimal places)</li>
+                            <li>Record exact mass</li>
+                            <li>Molar mass Na₂CO₃ = 106 g/mol</li>
+                        </ul>
+                    </div>
+                    <div class="step">
+                        <h3>💧 DISSOLVE</h3>
+                        <ul>
+                            <li>Transfer Na₂CO₃ to conical flask</li>
+                            <li>Add 50mL distilled water</li>
+                            <li>Swirl to dissolve completely</li>
+                        </ul>
+                    </div>
+                    <div class="step">
+                        <h3>🎨 ADD INDICATOR</h3>
+                        <ul>
+                            <li>Add 2-3 drops of methyl orange indicator</li>
+                            <li>Solution turns yellow</li>
+                        </ul>
+                    </div>
+                    <div class="step">
+                        <h3>📊 TITRATE</h3>
+                        <ul>
+                            <li>Fill burette with HCl solution</li>
+                            <li>Record initial reading</li>
+                            <li>Titrate slowly, swirling constantly</li>
+                            <li>Near endpoint, add dropwise</li>
+                            <li><strong>Endpoint:</strong> yellow → orange → pink</li>
+                            <li>Record final reading</li>
+                        </ul>
+                    </div>
+                    <div class="step">
+                        <h3>🔄 REPEAT</h3>
+                        <p>Perform at least 3 concordant titrations (within 0.1 mL of each other)</p>
+                    </div>
+                    <div class="step">
+                        <h3>🧮 CALCULATE</h3>
+                        <div class="formula-box">
+                            <div class="formula">M<sub>HCl</sub> = (mass<sub>Na₂CO₃</sub> / MM<sub>Na₂CO₃</sub>) × (2 / V<sub>HCl</sub>)</div>
+                            <p style="margin-top: 10px; text-align: left;">Factor of 2 because 2 moles HCl react with 1 mole Na₂CO₃</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="example-box">
+                    <h3 style="text-align: center;">📝 WORKED EXAMPLE</h3>
+                    <p>Mass Na₂CO₃ = 0.1325 g</p>
+                    <p>Average titre = 25.00 mL = 0.025 L</p>
+                    <p style="margin-top: 15px;">M<sub>HCl</sub> = (0.1325 / 106) × (2 / 0.025)</p>
+                    <p>M<sub>HCl</sub> = 0.00125 × 80</p>
+                    <p class="highlight">M<sub>HCl</sub> = 0.100 M</p>
+                </div>
+                
+                <div class="warning-box">
+                    <h3 class="subsection-title">⚠️ PRECAUTIONS</h3>
+                    <ul>
+                        <li>✓ Use freshly boiled and cooled distilled water (to remove CO₂)</li>
+                        <li>✓ Na₂CO₃ must be anhydrous (dry in oven at 270°C if needed)</li>
+                        <li>✓ Titrate slowly near endpoint</li>
+                        <li>✓ Avoid exposure of Na₂CO₃ to air (absorbs moisture and CO₂)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Continue with remaining sections compactly -->
+            <div id="double-indicator" class="section">
+                <h2 class="section-title">8. 🎨 DOUBLE INDICATOR TITRATION</h2>
+                
+                <div class="definition-box">
+                    <p><strong>Double indicator titration</strong> uses two indicators to determine two endpoints in the same titration, typically for mixtures of carbonate and hydroxide or carbonate and bicarbonate.</p>
+                </div>
+                
+                <div class="key-points">
+                    <h3>🎯 COMMON APPLICATION</h3>
+                    <p>Analysis of Na₂CO₃ + NaOH mixture</p>
+                    
+                    <h4 style="margin-top: 20px;">STAGE 1: Phenolphthalein indicator</h4>
+                    <p>NaOH + HCl → NaCl + H₂O</p>
+                    <p>Na₂CO₃ + HCl → NaHCO₃ + NaCl</p>
+                    <p><strong>Endpoint:</strong> Pink → Colorless (pH ≈ 8.3)</p>
+                    
+                    <h4 style="margin-top: 20px;">STAGE 2: Methyl orange indicator</h4>
+                    <p>NaHCO₃ + HCl → NaCl + H₂O + CO₂</p>
+                    <p><strong>Endpoint:</strong> Yellow → Orange/Red (pH ≈ 3.7)</p>
+                </div>
+                
+                <div class="formula-box">
+                    <h3>🧮 CALCULATIONS</h3>
+                    <p>Let V₁ = volume to phenolphthalein endpoint</p>
+                    <p>Let V₂ = additional volume to methyl orange endpoint</p>
+                    
+                    <h4 style="margin-top: 15px;">CASE 1: Na₂CO₃ + NaOH mixture</h4>
+                    <div class="formula">Volume for NaOH = V₁ - V₂</div>
+                    <div class="formula">Volume for Na₂CO₃ = 2V₂</div>
+                    
+                    <h4 style="margin-top: 15px;">CASE 2: Na₂CO₃ + NaHCO₃ mixture</h4>
+                    <div class="formula">Volume for Na₂CO₃ = 2V₁</div>
+                    <div class="formula">Volume for NaHCO₃ = V₂ - V₁</div>
+                    
+                    <h4 style="margin-top: 15px;">CASE 3: Pure Na₂CO₃</h4>
+                    <div class="formula">V₁ = V₂</div>
+                </div>
+                
+                <div class="example-box">
+                    <h3>📝 WORKED EXAMPLE</h3>
+                    <p>Sample containing Na₂CO₃ + NaOH titrated with 0.1M HCl</p>
+                    <p>V₁ (phenolphthalein) = 30 mL</p>
+                    <p>Total volume (methyl orange) = 40 mL</p>
+                    <p>Therefore V₂ = 40 - 30 = 10 mL</p>
+                    <p style="margin-top: 15px;"><strong>Volume for NaOH</strong> = V₁ - V₂ = 30 - 10 = 20 mL</p>
+                    <p>Moles NaOH = 0.1 × 0.020 = <span class="highlight">0.002 mol</span></p>
+                    <p style="margin-top: 10px;"><strong>Volume for Na₂CO₃</strong> = 2V₂ = 2 × 10 = 20 mL</p>
+                    <p>Moles Na₂CO₃ = 0.1 × 0.020 = <span class="highlight">0.002 mol</span></p>
+                </div>
+            </div>
+
+            <!-- Remaining sections 9-14 -->
+            <div id="back-titration" class="section">
+                <h2 class="section-title">9. ↩️ BACK TITRATION</h2>
+                
+                <div class="definition-box">
+                    <p><strong>Back titration</strong> is a technique where excess reagent is added to the analyte, then the unreacted excess is titrated with a second standard solution.</p>
+                </div>
+                
+                <div class="key-points">
+                    <h3>❓ WHEN USED</h3>
+                    <ul>
+                        <li>Analyte is insoluble in water</li>
+                        <li>Analyte reacts slowly</li>
+                        <li>Analyte is volatile</li>
+                        <li>Direct titration endpoint is unclear</li>
+                        <li>Analyte is in solid form</li>
+                    </ul>
+                </div>
+                
+                <div class="formula-box">
+                    <h3>🧮 FORMULA</h3>
+                    <div class="formula">Moles of analyte = Moles of A added - Moles of A remaining</div>
+                </div>
+                
+                <div class="example-box">
+                    <h3>📝 EXAMPLE: CaCO₃ in Antacid Tablets</h3>
+                    <p><strong>Reaction:</strong> CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂ (slow reaction)</p>
+                    <ol style="margin-left: 20px; margin-top: 15px;">
+                        <li>Dissolve tablet in excess 0.5M HCl (e.g., 50 mL)</li>
+                        <li>Heat to speed up reaction</li>
+                        <li>Cool</li>
+                        <li>Back titrate excess HCl with 0.1M NaOH using phenolphthalein</li>
+                    </ol>
+                    <p style="margin-top: 15px;"><strong>Calculation:</strong></p>
+                    <p>Moles HCl added = 0.5 × 0.050 = 0.025 mol</p>
+                    <p>Moles HCl reacted with NaOH = 0.1V</p>
+                    <p>Moles HCl reacted with CaCO₃ = 0.025 - 0.1V</p>
+                    <p class="highlight">Moles CaCO₃ = (0.025 - 0.1V) / 2</p>
+                </div>
+            </div>
+
+            <div id="complexometric" class="section">
+                <h2 class="section-title">10. 🔗 COMPLEXOMETRIC TITRATION</h2>
+                
+                <div class="definition-box">
+                    <p><strong>Complexometric titration</strong> is based on the formation of colored complexes between metal ions and chelating agents (EDTA is most common).</p>
+                </div>
+                
+                <div class="key-points">
+                    <h3>⚡ PRINCIPLE</h3>
+                    <ul>
+                        <li>Metal ions form stable complexes with EDTA</li>
+                        <li><strong>Reaction:</strong> Mn+ + EDTA⁴⁻ → M-EDTA⁽ⁿ⁻⁴⁾</li>
+                        <li>1:1 stoichiometry regardless of metal charge</li>
+                        <li>Uses metallochromic indicators</li>
+                    </ul>
+                </div>
+                
+                <div class="key-points">
+                    <h3>🎨 MAIN INDICATOR: Eriochrome Black T (EBT)</h3>
+                    <ul>
+                        <li><strong>Used for:</strong> Ca²⁺, Mg²⁺, Zn²⁺</li>
+                        <li><strong>pH:</strong> 8-10 (ammonia buffer)</li>
+                        <li><strong>Free indicator:</strong> Blue</li>
+                        <li><strong>Metal-indicator complex:</strong> Wine red</li>
+                        <li><strong>Endpoint:</strong> Wine red → Blue</li>
+                    </ul>
+                </div>
+                
+                <div class="formula-box">
+                    <h3>🧮 CALCULATION (Water Hardness)</h3>
+                    <div class="formula">Total hardness (mg/L as CaCO₃) = (M<sub>EDTA</sub> × V<sub>EDTA</sub> × 100,000) / V<sub>sample</sub></div>
+                </div>
+                
+                <div class="key-points">
+                    <h3>🎯 APPLICATIONS</h3>
+                    <ul>
+                        <li>Water hardness determination (Total, Ca²⁺, Mg²⁺)</li>
+                        <li>Calcium in milk</li>
+                        <li>Zinc in pharmaceuticals</li>
+                        <li>Lead, copper, nickel in samples</li>
+                        <li>Metal content in alloys</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="milliequivalent" class="section">
+                <h2 class="section-title">11. ⚖️ MILLIEQUIVALENT CALCULATIONS</h2>
+                
+                <div class="definition-box">
+                    <p>A <strong>milliequivalent (mEq)</strong> is 1/1000 of an equivalent. Commonly used in clinical chemistry and pharmaceutical calculations.</p>
+                </div>
+                
+                <div class="formula-box">
+                    <h3>📐 FORMULAS</h3>
+                    <div class="formula">mEq = (mass in mg / molecular weight) × valence</div>
+                    <div class="formula">mEq = mmol × valence</div>
+                    <div class="formula">mg = (mEq × MW) / valence</div>
+                </div>
+                
+                <div class="example-box">
+                    <h3>📝 EXAMPLES</h3>
+                    <p><strong>Example 1:</strong> Calculate mEq in 234 mg of NaCl</p>
+                    <p>MW of NaCl = 58.5 g/mol, Valence = 1</p>
+                    <p class="highlight">mEq = (234 / 58.5) × 1 = 4 mEq</p>
+                    
+                    <p style="margin-top: 20px;"><strong>Example 2:</strong> How many mg in 5 mEq of CaCl₂?</p>
+                    <p>MW of CaCl₂ = 111 g/mol, Valence of Ca²⁺ = 2</p>
+                    <p class="highlight">mg = (5 × 111) / 2 = 277.5 mg</p>
+                </div>
+                
+                <div class="key-points">
+                    <h3>💉 CLINICAL APPLICATIONS</h3>
+                    <p><strong>Normal serum levels:</strong></p>
+                    <ul>
+                        <li>Na⁺: 135-145 mEq/L</li>
+                        <li>K⁺: 3.5-5.0 mEq/L</li>
+                        <li>Ca²⁺: 4.5-5.5 mEq/L</li>
+                        <li>Cl⁻: 95-105 mEq/L</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="edta" class="section">
+                <h2 class="section-title">12. 🧬 EDTA - FULL MEANING</h2>
+                
+                <div class="definition-box">
+                    <h3>📖 FULL NAME</h3>
+                    <p class="highlight" style="font-size: 1.3rem; text-align: center;">Ethylenediaminetetraacetic acid</p>
+                </div>
+                
+                <div class="key-points">
+                    <h3>📋 ALTERNATIVE NAMES</h3>
+                    <ul>
+                        <li>Edetic acid</li>
+                        <li>Ethylenediamine-N,N,N',N'-tetraacetic acid</li>
+                        <li>EDTA-4Na (tetrasodium salt)</li>
+                        <li>EDTA-2Na (disodium salt) - most common form</li>
+                    </ul>
+                </div>
+                
+                <div class="key-points">
+                    <h3>🧪 CHEMICAL FORMULA</h3>
+                    <ul>
+                        <li>Free acid: C₁₀H₁₆N₂O₈</li>
+                        <li>Disodium salt: C₁₀H₁₄N₂Na₂O₈·2H₂O</li>
+                        <li>Molecular weight: 372.24 g/mol (disodium salt dihydrate)</li>
+                    </ul>
+                </div>
+                
+                <div class="key-points">
+                    <h3>⭐ KEY FEATURES</h3>
+                    <ul>
+                        <li>Hexadentate ligand (6 donor atoms)</li>
+                        <li>4 carboxyl groups (-COOH)</li>
+                        <li>2 amine groups (=N-)</li>
+                        <li>Forms cage-like structure around metal ions</li>
+                        <li>Very stable complexes (chelates)</li>
+                        <li>1:1 stoichiometry with metal ions</li>
+                    </ul>
+                </div>
+                
+                <div class="key-points">
+                    <h3>🎯 USES</h3>
+                    <p><strong>In Analytical Chemistry:</strong></p>
+                    <ul>
+                        <li>Complexometric titrations</li>
+                        <li>Metal ion determination</li>
+                        <li>Water hardness testing</li>
+                        <li>Masking agent</li>
+                    </ul>
+                    <p style="margin-top: 15px;"><strong>Other Uses:</strong></p>
+                    <ul>
+                        <li>Food preservative (antioxidant)</li>
+                        <li>Chelation therapy (heavy metal poisoning)</li>
+                        <li>Cosmetics and personal care products</li>
+                        <li>Blood anticoagulant</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="accuracy" class="section">
+                <h2 class="section-title">13. 🎯 ACCURACY vs PRECISION</h2>
+                
+                <div class="comparison-grid">
+                    <div class="comparison-card right">
+                        <h3 style="color: #2e7d32; text-align: center;">ACCURACY</h3>
+                        <p style="text-align: center; margin: 15px 0;"><strong>How close to TRUE value</strong></p>
+                        <ul style="margin-left: 20px;">
+                            <li>Measures correctness</li>
+                            <li>Closeness to true/accepted value</li>
+                            <li>Related to systematic error</li>
+                            <li>One measurement can be accurate</li>
+                            <li>Example: hitting bullseye</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="comparison-card left">
+                        <h3 style="color: #c62828; text-align: center;">PRECISION</h3>
+                        <p style="text-align: center; margin: 15px 0;"><strong>How close to EACH OTHER</strong></p>
+                        <ul style="margin-left: 20px;">
+                            <li>Measures reproducibility</li>
+                            <li>Closeness to each other</li>
+                            <li>Related to random error</li>
+                            <li>Need multiple measurements</li>
+                            <li>Example: tight grouping</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="key-points" style="margin-top: 30px;">
+                    <h3>🎯 DARTBOARD ANALOGY</h3>
+                    <table>
+                        <tr>
+                            <th>Situation</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>High Accuracy, High Precision</td>
+                            <td>🎯 All darts clustered tightly at bullseye (IDEAL)</td>
+                        </tr>
+                        <tr>
+                            <td>High Accuracy, Low Precision</td>
+                            <td>Darts scattered around bullseye (average correct)</td>
+                        </tr>
+                        <tr>
+                            <td>Low Accuracy, High Precision</td>
+                            <td>Darts tightly clustered away from bullseye (systematic error)</td>
+                        </tr>
+                        <tr>
+                            <td>Low Accuracy, Low Precision</td>
+                            <td>Darts scattered far from bullseye (worst case)</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="formula-box">
+                    <h3>🧮 QUANTIFYING</h3>
+                    <p><strong>Accuracy:</strong></p>
+                    <div class="formula">% error = [(Measured - True) / True] × 100%</div>
+                    
+                    <p style="margin-top: 15px;"><strong>Precision:</strong></p>
+                    <div class="formula">Standard deviation (SD)</div>
+                    <div class="formula">Coefficient of variation (CV) = (SD / Mean) × 100%</div>
+                </div>
+                
+                <div class="tip-box">
+                    <p style="font-size: 1.1rem; font-weight: 600; text-align: center;">
+                        💡 You can have precision without accuracy, but accuracy without precision suggests you were just lucky!
+                    </p>
+                </div>
+            </div>
+
+            <div id="primary" class="section">
+                <h2 class="section-title">14. ⭐ PRIMARY STANDARDS</h2>
+                
+                <div class="definition-box">
+                    <p>A <strong>primary standard</strong> is a highly purified, stable compound used to prepare standard solutions of accurately known concentration or to standardize other solutions.</p>
+                </div>
+                
+                <div class="key-points">
+                    <h3>✅ CHARACTERISTICS (10 Requirements)</h3>
+                    <ol style="margin-left: 25px;">
+                        <li><strong>High Purity (&gt;99.9%)</strong> - Available in very pure form</li>
+                        <li><strong>Stability</strong> - Does not decompose on storage</li>
+                        <li><strong>Large Molecular Weight</strong> - Reduces weighing errors</li>
+                        <li><strong>Non-Hygroscopic</strong> - Does not absorb moisture from air</li>
+                        <li><strong>Readily Available</strong> - Commercially available, reasonably priced</li>
+                        <li><strong>Easy to Dry</strong> - Can be dried to constant weight</li>
+                        <li><strong>Soluble</strong> - Readily soluble in solvent used</li>
+                        <li><strong>High Equivalent Weight</strong> - Reduces relative error</li>
+                        <li><strong>Stoichiometric Reaction</strong> - Complete, known reaction</li>
+                        <li><strong>Non-Toxic</strong> (preferable) - Safe to handle</li>
+                    </ol>
+                </div>
+                
+                <div class="key-points">
+                    <h3>🧪 COMMON PRIMARY STANDARDS</h3>
+                    <table>
+                        <tr>
+                            <th>Primary Standard</th>
+                            <th>Used For</th>
+                            <th>Indicator</th>
+                        </tr>
+                        <tr>
+                            <td>Na₂CO₃</td>
+                            <td>HCl / H₂SO₄ standardization</td>
+                            <td>Methyl orange</td>
+                        </tr>
+                        <tr>
+                            <td>KHP (Potassium Hydrogen Phthalate)</td>
+                            <td>NaOH / KOH standardization</td>
+                            <td>Phenolphthalein</td>
+                        </tr>
+                        <tr>
+                            <td>K₂Cr₂O₇</td>
+                            <td>Na₂S₂O₃ standardization</td>
+                            <td>Various</td>
+                        </tr>
+                        <tr>
+                            <td>Na₂C₂O₄</td>
+                            <td>KMnO₄ standardization</td>
+                            <td>Self-indicating</td>
+                        </tr>
+                        <tr>
+                            <td>CaCO₃</td>
+                            <td>EDTA standardization</td>
+                            <td>EBT</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="warning-box">
+                    <h3>❌ NOT PRIMARY STANDARDS</h3>
+                    <ul>
+                        <li><strong>NaOH:</strong> Hygroscopic, absorbs CO₂</li>
+                        <li><strong>HCl:</strong> Volatile, concentration changes</li>
+                        <li><strong>KMnO₄:</strong> Not high purity, decomposes in light</li>
+                        <li><strong>Na₂S₂O₃:</strong> Hydrated, decomposes slowly</li>
+                        <li><strong>I₂:</strong> Volatile, solutions unstable</li>
+                    </ul>
+                    <p style="margin-top: 15px;"><strong>→ These must all be standardized!</strong></p>
+                </div>
+            </div>
+
+            <!-- Footer/Summary -->
+            <div style="background: linear-gradient(135deg, #1a5f7a 0%, #159895 100%); color: white; padding: 40px; text-align: center; border-radius: 15px; margin-top: 60px;">
+                <h2 style="font-size: 2rem; margin-bottom: 20px;">🎓 Study Complete!</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 15px;">You've covered all 14 essential topics in Analytical Chemistry</p>
+                <p style="font-size: 1.1rem;">📚 Master these concepts for exam success! 📚</p>
+                <div style="margin-top: 30px; font-size: 0.9rem; opacity: 0.8;">
+                    <p>Created with ❤️ for your success</p>
+                    <p>Good luck with your studies!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="back-to-top" onclick="document.getElementById('toc').scrollIntoView({behavior: 'smooth'})">
+        ↑
+    </div>
+    
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Show/hide back to top button
+        window.addEventListener('scroll', function() {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.style.display = 'flex';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
